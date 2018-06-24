@@ -1,0 +1,123 @@
+<VSTemplate Version="3.0.0" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005" Type="Project">
+  <TemplateData>
+    <Name>Siv3D(August2016v2)</Name>
+    <Description>Siv3D でアプリケーションを開発するプロジェクトです。</Description>
+    <ProjectType>VC</ProjectType>
+    <ProjectSubType>
+    </ProjectSubType>
+    <SortOrder>1000</SortOrder>
+    <CreateNewFolder>true</CreateNewFolder>
+    <DefaultName>Siv3D(August2016v2)</DefaultName>
+    <ProvideDefaultName>true</ProvideDefaultName>
+    <LocationField>Enabled</LocationField>
+    <EnableLocationBrowseButton>true</EnableLocationBrowseButton>
+    <Icon>__TemplateIcon.ico</Icon>
+    <PreviewImage>__PreviewImage.png</PreviewImage>
+  </TemplateData>
+  <TemplateContent>
+    <Project TargetFileName="Siv3D(August2016v2).vcxproj" File="Siv3D(August2016v2).vcxproj" ReplaceParameters="true">
+      <ProjectItem ReplaceParameters="false" TargetFileName="$projectname$.vcxproj.filters">Siv3D(August2016v2).vcxproj.filters</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="Main.cpp">Main.cpp</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="Resource.rc">Resource.rc</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="Icon.ico">Icon.ico</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="Splash.png">ENGINE\Splash.png</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="Config.ini">ENGINE\Config.ini</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="LogMessages.txt">ENGINE\LogMessages.txt</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="engine_textures.s3a">ENGINE\ASSETS\engine_textures.s3a</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="d3dcompiler_47.dll">ENGINE\DLL(X64)\D3D\d3dcompiler_47.dll</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="libmpg123-0.dll">ENGINE\DLL(X64)\LIBMPG123\libmpg123-0.dll</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="COPYING.txt">ENGINE\DLL(X64)\LIBMPG123\COPYING.txt</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="COPYING">ENGINE\DLL(X64)\LIBQRENCODE\COPYING</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="libqrencode.dll">ENGINE\DLL(X64)\LIBQRENCODE\libqrencode.dll</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="README">ENGINE\DLL(X64)\LIBQRENCODE\README</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="SoundTouch.dll">ENGINE\DLL(X64)\SOUNDTOUCH\SoundTouch.dll</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="COPYING.TXT">ENGINE\DLL(X64)\SOUNDTOUCH\COPYING.TXT</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="Tobii.EyeX.Client.dll">ENGINE\DLL(X64)\TOBIIEYEX\Tobii.EyeX.Client.dll</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="d3dcompiler_47.dll">ENGINE\DLL(X86)\D3D\d3dcompiler_47.dll</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="libmpg123-0.dll">ENGINE\DLL(X86)\LIBMPG123\libmpg123-0.dll</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="COPYING.txt">ENGINE\DLL(X86)\LIBMPG123\COPYING.txt</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="COPYING">ENGINE\DLL(X86)\LIBQRENCODE\COPYING</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="libqrencode.dll">ENGINE\DLL(X86)\LIBQRENCODE\libqrencode.dll</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="README">ENGINE\DLL(X86)\LIBQRENCODE\README</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="SoundTouch.dll">ENGINE\DLL(X86)\SOUNDTOUCH\SoundTouch.dll</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="COPYING.TXT">ENGINE\DLL(X86)\SOUNDTOUCH\COPYING.TXT</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="Tobii.EyeX.Client.dll">ENGINE\DLL(X86)\TOBIIEYEX\Tobii.EyeX.Client.dll</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="mplus-1p-black.zip">ENGINE\FONTS\mplus-1p-black.zip</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="mplus-1p-bold.zip">ENGINE\FONTS\mplus-1p-bold.zip</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="mplus-1p-heavy.zip">ENGINE\FONTS\mplus-1p-heavy.zip</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="mplus-1p-light.zip">ENGINE\FONTS\mplus-1p-light.zip</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="mplus-1p-medium.zip">ENGINE\FONTS\mplus-1p-medium.zip</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="mplus-1p-regular.zip">ENGINE\FONTS\mplus-1p-regular.zip</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="mplus-1p-thin.zip">ENGINE\FONTS\mplus-1p-thin.zip</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="umeplus-p-gothic.zip">ENGINE\FONTS\umeplus-p-gothic.zip</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="faceAnime.zip">ENGINE\OBJDETECT\faceAnime.zip</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="facePhoto.zip">ENGINE\OBJDETECT\facePhoto.zip</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="DeferredFinalize.ps">ENGINE\SHADERS\D3D11\DeferredFinalize.ps</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="DeferredMesh.ps">ENGINE\SHADERS\D3D11\DeferredMesh.ps</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="DeferredMesh.vs">ENGINE\SHADERS\D3D11\DeferredMesh.vs</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="DeferredMesh_Shadow.ps">ENGINE\SHADERS\D3D11\DeferredMesh_Shadow.ps</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="DeferredMesh_Shadow.vs">ENGINE\SHADERS\D3D11\DeferredMesh_Shadow.vs</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="DeferredMesh_Textured.ps">ENGINE\SHADERS\D3D11\DeferredMesh_Textured.ps</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="ForwardLine3D.ps">ENGINE\SHADERS\D3D11\ForwardLine3D.ps</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="ForwardLine3D.vs">ENGINE\SHADERS\D3D11\ForwardLine3D.vs</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="ForwardMesh.ps">ENGINE\SHADERS\D3D11\ForwardMesh.ps</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="ForwardMesh.vs">ENGINE\SHADERS\D3D11\ForwardMesh.vs</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="ForwardMesh_Textured.ps">ENGINE\SHADERS\D3D11\ForwardMesh_Textured.ps</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="ForwardParticle.vs">ENGINE\SHADERS\D3D11\ForwardParticle.vs</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="FullScreenTriangle.vs">ENGINE\SHADERS\D3D11\FullScreenTriangle.vs</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="FullScreenTriangle1xMSAA.ps">ENGINE\SHADERS\D3D11\FullScreenTriangle1xMSAA.ps</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="FullScreenTriangle1xMSAA_Linear.ps">ENGINE\SHADERS\D3D11\FullScreenTriangle1xMSAA_Linear.ps</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="FullScreenTriangle2xMSAA.ps">ENGINE\SHADERS\D3D11\FullScreenTriangle2xMSAA.ps</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="FullScreenTriangle2xMSAA_Linear.ps">ENGINE\SHADERS\D3D11\FullScreenTriangle2xMSAA_Linear.ps</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="FullScreenTriangle4xMSAA.ps">ENGINE\SHADERS\D3D11\FullScreenTriangle4xMSAA.ps</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="FullScreenTriangle4xMSAA_Linear.ps">ENGINE\SHADERS\D3D11\FullScreenTriangle4xMSAA_Linear.ps</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="FXAA_None.ps">ENGINE\SHADERS\D3D11\FXAA_None.ps</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="FXAA_Q20.ps">ENGINE\SHADERS\D3D11\FXAA_Q20.ps</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="FXAA_Q25.ps">ENGINE\SHADERS\D3D11\FXAA_Q25.ps</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="FXAA_Q39.ps">ENGINE\SHADERS\D3D11\FXAA_Q39.ps</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="LightAccumulation.vs">ENGINE\SHADERS\D3D11\LightAccumulation.vs</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="LightAccumulation_ExponentialFog.ps">ENGINE\SHADERS\D3D11\LightAccumulation_ExponentialFog.ps</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="LightAccumulation_HeightFog.ps">ENGINE\SHADERS\D3D11\LightAccumulation_HeightFog.ps</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="LightAccumulation_LinearFog.ps">ENGINE\SHADERS\D3D11\LightAccumulation_LinearFog.ps</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="LightAccumulation_NoFog.ps">ENGINE\SHADERS\D3D11\LightAccumulation_NoFog.ps</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="LightAccumulation_SquaredExponentialFog.ps">ENGINE\SHADERS\D3D11\LightAccumulation_SquaredExponentialFog.ps</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="Shape.ps">ENGINE\SHADERS\D3D11\Shape.ps</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="Shape_Stencil.ps">ENGINE\SHADERS\D3D11\Shape_Stencil.ps</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="Sprite.ps">ENGINE\SHADERS\D3D11\Sprite.ps</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="Sprite.vs">ENGINE\SHADERS\D3D11\Sprite.vs</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="Sprite_Font.ps">ENGINE\SHADERS\D3D11\Sprite_Font.ps</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="Sprite_Stencil.ps">ENGINE\SHADERS\D3D11\Sprite_Stencil.ps</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="Sound.mp3">EXAMPLE\Sound.mp3</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="風の丘.mp3">EXAMPLE\vstg0005.mp3</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="Brick.jpg">EXAMPLE\Brick.jpg</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="Earth.jpg">EXAMPLE\Earth.jpg</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="Grass.jpg">EXAMPLE\Grass.jpg</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="Ground.jpg">EXAMPLE\Ground.jpg</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="Particle.png">EXAMPLE\Particle.png</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="Siv3D-kun.png">EXAMPLE\Siv3D-kun.png</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="Windmill.png">EXAMPLE\Windmill.png</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="YomogiFont.ttf">EXAMPLE\YomogiFont.ttf</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="Hiragana.model">EXAMPLE\Hiragana.model</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="Prokofiev.mid">EXAMPLE\Prokofiev.mid</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="Test.csv">EXAMPLE\Test.csv</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="Test.ini">EXAMPLE\Test.ini</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="Test.json">EXAMPLE\Test.json</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="Test.txt">EXAMPLE\Test.txt</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="素材について.txt">EXAMPLE\vstg0007.txt</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="Blend2D.hlsl">EXAMPLE\SHADERS\Blend2D.hlsl</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="Invert2D.hlsl">EXAMPLE\SHADERS\Invert2D.hlsl</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="Monochrome2D.hlsl">EXAMPLE\SHADERS\Monochrome2D.hlsl</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="PoissonDisk2D.hlsl">EXAMPLE\SHADERS\PoissonDisk2D.hlsl</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="RGBSplit2D.hlsl">EXAMPLE\SHADERS\RGBSplit2D.hlsl</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="Simple2D.hlsl">EXAMPLE\SHADERS\Simple2D.hlsl</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="Simple3D.hlsl">EXAMPLE\SHADERS\Simple3D.hlsl</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="Simple3DForward.hlsl">EXAMPLE\SHADERS\Simple3DForward.hlsl</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="Swirl2D.hlsl">EXAMPLE\SHADERS\Swirl2D.hlsl</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="Terrain3D.hlsl">EXAMPLE\SHADERS\Terrain3D.hlsl</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="Wave2DPointSprites.hlsl">EXAMPLE\SHADERS\Wave2DPointSprites.hlsl</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="Well.jpg">EXAMPLE\WELL\Well.jpg</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="Well.mtl">EXAMPLE\WELL\Well.mtl</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="Well.wavefrontobj">EXAMPLE\WELL\Well.wavefrontobj</ProjectItem>
+    </Project>
+  </TemplateContent>
+</VSTemplate>
