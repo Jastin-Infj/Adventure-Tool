@@ -11,7 +11,7 @@ Visual Stdio 2017　C++17
 
 外部ライブラリ
 
-・OpenSiv3D
+・Siv3DEngine(August8 2016)
 
 
 企画の開始　6月21日()
