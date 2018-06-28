@@ -1,14 +1,24 @@
 #include "EngineSystem.h"
 
+OrderCheck::OrderCheck()
+{
+	///-1 設定されていない
+	this->id = -1;
+	this->order_s = -1.f;
+}
+
+
 EngineSystem::EngineSystem()
 {
-	
+#ifdef _DEBUG
+	std::cout << "タスクエンジン　生成";
+#endif // _DEBUG
 }
 EngineSystem::~EngineSystem()
 {
-	#ifdef _DEBUG
+#ifdef _DEBUG
 	std::cout << "タスクエンジン　解放処理" << std::endl;
-	#endif // _DEBUG
+#endif // _DEBUG
 }
 bool EngineSystem::Initalize()
 {
@@ -53,6 +63,7 @@ void EngineSystem::Task_Render()
 		}
 	}
 }
+/* 自身の更新処理をします */
 void EngineSystem::TaskGameUpDate()
 {
 	this->Task_UpDate();
@@ -82,11 +93,6 @@ void EngineSystem::ConfigDrawOrder()
 		}
 	}
 }
-EngineSystem::~EngineSystem()
-{
-	/* 登録しているタスクをすべてを破棄する */
-	this->AllTaskDelete();
-}
 void EngineSystem::setPause(const bool ispause_)
 {
 	/* ポーズ設定をします */
@@ -111,7 +117,11 @@ void EngineSystem::setTaskObject(const TaskSystemObject::SP& To)
 	/* 登録予定オブジェクトを登録する */
 	this->addTaskObjects.push_back(To);
 }
-
+/* タスクを変更する際に戻す処理 */
+void EngineSystem::ChengeTask()
+{
+	this->setPause(false);
+}
 void EngineSystem::AllTaskDelete()
 {
 	/* 全削除をする */
@@ -120,7 +130,7 @@ void EngineSystem::AllTaskDelete()
 	{
 		/* vectorの先頭アドレスを削除 */
 		this->taskobjects.erase(id);
-		/* 削除で詰めてある先頭のvectorアドレス */
+		/* 削除で詰めてある先頭のvectorアドレス*/
 		id = this->taskobjects.begin();
 	}
 }
@@ -147,9 +157,96 @@ void EngineSystem::TaskKillCheck()
 			/* killされた */
 			if (id->second->getKillcount() > 0)
 			{
+				/* 一つずつ削除する */
 				this->taskobjects.erase(id);
+				/* 登録予定のものを登録する */
 				this->TaskApplication();
+				/* vectorの先頭アドレス指す */
+				id = this->taskobjects.begin();
 			}
+			/* killされていないオブジェクトは飛ばして加算する */
+			else
+			{
+				++id;
+			}
+		}
+		/* nullptrは飛ばして加算をする */
+		else
+		{
+			++id;
 		}
 	}
 }
+/* 登録予定オブジェクトの有無を返します */
+bool EngineSystem::CheckAddTask()
+{
+	return this->addTaskObjects.size() > 0;
+}
+/* 登録タスクがkillされているかを判定します */
+bool EngineSystem::CheckKillTask()
+{
+	for (int i = 0; i < this->taskobjects.size(); ++i)
+	{
+		/* 登録タスクのオブジェクトがkillされている */
+		if (taskobjects[i].second->getKillcount() > 0)
+		{
+			return true;
+		}
+	}
+	return false;
+}
+/* エンジンの終了を登録します */
+void EngineSystem::setDeleteEngine(const bool flag)
+{
+	this->DeleteEngine = flag;
+}
+/* エンジン終了を返します */
+bool EngineSystem::getDeleteEngine()
+{
+	return this->DeleteEngine;
+}
+/* タスクの検索(先頭の同名のタスクを返します)*/
+template<class T>
+std::shared_ptr<T> EngineSystem::GetTask(const std::string& taskname)
+{
+	/* 登録されているタスク名がtasknameと一致しているか */
+	for (auto id = this->taskobjects.begin(); id != this->taskobjects.end(); ++id)
+	{
+		if ((*id).second != nullptr)
+		{
+			if ((*id).second->getTaskName() == taskname)
+			{
+				return std::static_pointer_cast<T>((*id).second);
+			}
+		}
+	}
+	/* 登録予定のタスク名がtasknameと一致しているか */
+	for (auto id = this->addTaskObjects.begin(); id != this->addTaskObjects.end(); ++id)
+	{
+		if ((*id) != nullptr)
+		{
+			if ((*id)->getTaskName() == taskname)
+			{
+				return std::static_pointer_cast<T>((*id));
+			}
+		}
+	}
+	return nullptr;
+}
+/* vectorで格納されているオブジェクトを返します */
+template <class T>
+std::shared_ptr<std::vector<std::shared_ptr<T>>> EngineSystem::GetTasks(const std::string& taskname)
+{
+	/* 仮のvector::SPを生成する */
+	std::shared_ptr<std::vector<std::shared_ptr<T>>> find = std::shared_ptr<std::vector<std::shared_ptr<T>>>(new std::vector<std::shared_ptr<T>>());
+	for (auto id = this->taskobjects.begin(); id != this->taskobjects.end(); ++id)
+	{
+		if ((*id).second->getTaskName() == taskname)
+		{
+			/* <unknown> <unnamed>によりpush_back */
+			/* 仮のvectorに件数追加する */
+			find->push_back(std::static_pointer_cast<)
+		}
+	}
+}
+EngineSystem* TaskSystem;

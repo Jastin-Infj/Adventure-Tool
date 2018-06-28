@@ -39,6 +39,10 @@ bool TaskSystemObject::getNextTask()const
 {
 	return this->NextTask;
 }
+std::string TaskSystemObject::getTaskName()const
+{
+	return this->taskName;
+}
 void TaskSystemObject::Kill()
 {
 

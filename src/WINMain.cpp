@@ -3,7 +3,6 @@
 void Main()
 {
 	Console::Open();
-
 	while (System::Update())
 	{
 		
