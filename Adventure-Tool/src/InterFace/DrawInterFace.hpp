@@ -334,6 +334,27 @@ public:
 	{
 		draw_.draw(color);
 	}
+
+
+	/// <summary>
+	/// 当たり判定に白い矩形と矩形
+	/// </summary>
+	void RectCircleDraw()
+	{
+		Rect rect;
+		rect = { (int)drawbace.x - 1, (int)drawbace.y - 1, (int)drawbace.w + 2,(int)drawbace.h + 2};
+		Circle circle[4];
+		circle[0] = { drawbace.x , drawbace.y , 5 };
+		circle[1] = { drawbace.x + drawbace.w , drawbace.y, 5 };
+		circle[2] = { drawbace.x , drawbace.y + drawbace.h , 5 };
+		circle[3] = { drawbace.x + drawbace.w , drawbace.y + drawbace.h, 5 };
+
+		rect.draw();
+		for (int i = 0; i < 4; ++i)
+		{
+			circle[i].draw();
+		}
+	}
 private:
 	s3d::RectF drawbace;	//描画矩形(整数)
 	s3d::Rect  srcbace;		//画像元矩形（整数）

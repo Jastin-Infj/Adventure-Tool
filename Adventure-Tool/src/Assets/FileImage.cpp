@@ -74,7 +74,12 @@ void FileImage::Render()
 	{
 		this->draw->setDrawBace(this->position, this->scale);
 	}
-	if (!this->draw->isTexture() && this->draw)
+	if (!this->draw->isTexture() && this->draw && this->mousegrid)
+	{
+		this->draw->RectCircleDraw();
+		this->draw->TextureDraw(this->draw->getDrawBace(), this->draw->getSrcBace());
+	}
+	else if (!this->draw->isTexture() && this->draw)
 	{
 		this->draw->TextureDraw(this->draw->getDrawBace(), this->draw->getSrcBace());
 	}
@@ -106,13 +111,9 @@ void FileImage::MovebyMouse()
 {
 	if (this->draw->getDrawBace().leftClicked)
 	{
-		this->mousegrid = true;
+		this->mousegrid = !this->mousegrid;
 	}
-	else if (Input::MouseL.released)
-	{
-		this->mousegrid = false;
-	}
-	else if (this->mousegrid)
+	else if (this->mousegrid && Input::MouseL.pressed)
 	{
 		this->position = this->position.moveBy(Mouse::DeltaF());
 	}
