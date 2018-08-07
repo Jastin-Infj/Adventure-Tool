@@ -1,6 +1,8 @@
 #include "Task_Tool.h"
 #include "../TaskSystem/TaskSystem.h"
 
+#include "../Assets/FileImage.h"
+
 /*コンストラクタ*/
 Tool::Tool()
 {
@@ -22,6 +24,10 @@ bool Tool::Init(const TASKNAME& taskname_)
 {
 	__super::setTaskName(taskname_);
 	__super::setDrawOrder(1.0f);
+
+	{
+		auto file = FileImage::Create(TASKNAME("UI", "パス"));
+	}
 	return true;
 }
 /*ツールを生成します*/

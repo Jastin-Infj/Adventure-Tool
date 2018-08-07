@@ -277,6 +277,7 @@
     <Font Include="Example\YomogiFont.ttf" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="src\Assets\FileImage.cpp" />
     <ClCompile Include="src\Assets\GameObject.cpp" />
     <ClCompile Include="src\ResourceManager\ResourceManager.cpp" />
     <ClCompile Include="src\TaskSystem\TaskObject.cpp" />
@@ -286,6 +287,7 @@
     <ClCompile Include="src\Winmain.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="src\Assets\FileImage.h" />
     <ClInclude Include="src\Assets\GameObject.h" />
     <ClInclude Include="src\InterFace\Collider.hpp" />
     <ClInclude Include="src\InterFace\DrawInterFace.hpp" />

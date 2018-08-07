@@ -150,6 +150,18 @@ public:
 	}
 
 
+	/// <summary>
+	/// テクスチャが空であるかを判定します
+	/// </summary>
+	/// <returns>
+	/// 空 true 中身がある false
+	/// </returns>
+	bool isTexture()const
+	{
+		return this->image.isEmpty();
+	}
+
+
 	///<summary>
 	///描画矩形を返します
 	///</summary>

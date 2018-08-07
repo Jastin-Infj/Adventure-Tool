@@ -423,6 +423,9 @@
     <ClCompile Include="src\Winmain.cpp">
       <Filter>ソース ファイル</Filter>
     </ClCompile>
+    <ClCompile Include="src\Assets\FileImage.cpp">
+      <Filter>ソース ファイル\Assets</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\TaskSystem\TaskObject.h">
@@ -453,6 +456,9 @@
       <Filter>ソース ファイル\Task</Filter>
     </ClInclude>
     <ClInclude Include="src\Assets\GameObject.h">
+      <Filter>ソース ファイル\Assets</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Assets\FileImage.h">
       <Filter>ソース ファイル\Assets</Filter>
     </ClInclude>
   </ItemGroup>
