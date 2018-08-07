@@ -40,7 +40,8 @@ bool FileImage::Init(const TASKNAME& taskname_)
 	__super::setDrawOrder(1.0f);
 
 	this->position = { 0,0 };
-	this->scale = { 64,64 };
+	this->scale = { 0,0 };
+	this->mousegrid = false;
 	this->draw = DrawInterFace::Addcomponent(RectF(this->position, this->scale), Rect{});
 	return true;
 }
@@ -58,11 +59,21 @@ void FileImage::Update()
 		this->draw->setTexture(texture);
 		this->draw->setDrawSrc(Rect(Point{}, texture._get_size()));
 		rm->setTexture(this->getTaskname().second, texture);
+		this->position = { Window::Center() - texture._get_size() / 2 };
+		this->scale = texture._get_size();
+	}
+	else if (this->draw && !this->draw->isTexture())
+	{
+		this->MovebyMouse();
 	}
 }
 /*描画処理*/
 void FileImage::Render()
 {
+	if (draw)
+	{
+		this->draw->setDrawBace(this->position, this->scale);
+	}
 	if (!this->draw->isTexture() && this->draw)
 	{
 		this->draw->TextureDraw(this->draw->getDrawBace(), this->draw->getSrcBace());
@@ -89,5 +100,21 @@ Texture FileImage::Load()
 		}
 	}
 	return texture;
+}
+/*マウス移動による画像移動を行います*/
+void FileImage::MovebyMouse()
+{
+	if (this->draw->getDrawBace().leftClicked)
+	{
+		this->mousegrid = true;
+	}
+	else if (Input::MouseL.released)
+	{
+		this->mousegrid = false;
+	}
+	else if (this->mousegrid)
+	{
+		this->position = this->position.moveBy(Mouse::DeltaF());
+	}
 }
 

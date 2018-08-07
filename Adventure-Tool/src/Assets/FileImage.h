@@ -73,4 +73,13 @@ public:
 	/// true 読み込み成功 false 読みこみ失敗
 	/// </returns>
 	Texture Load();
+
+
+	/// <summary>
+	/// マウスによる移動を行います
+	/// </summary>
+	void MovebyMouse();
+
+private:
+	bool mousegrid;			//マウスグリッドフラグ
 };
