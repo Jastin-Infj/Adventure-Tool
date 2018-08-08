@@ -34,6 +34,7 @@ bool RibbonMenu::Init(const TASKNAME& taskname_, const RibbonMenu::Menutype&  bu
 	(this->*menutypefunction[(int)this->menutype])();
 
 	this->draw = DrawInterFace::Addcomponent(RectF(this->position, this->scale));
+
 	return true;
 }
 /*ƒƒjƒ…[‚ğ¶¬‚µ‚Ü‚·*/

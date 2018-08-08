@@ -39,7 +39,6 @@ void Main()
 	/*初期時にタスクを生成します*/
 	TaskStartCreate();
 	
-
 	/*ウィンドウを表示させる*/
 	while (System::Update())
 	{

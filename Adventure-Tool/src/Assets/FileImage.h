@@ -1,6 +1,8 @@
 #pragma once
 #include "GameObject.h"
 
+#define DOUBLECLICK 2
+
 class FileImage : public GameObject
 {
 public:
@@ -80,6 +82,23 @@ public:
 	/// </summary>
 	void MovebyMouse();
 
+
+	/// <summary>
+	/// ダブルクリックを判定します
+	/// </summary>
+	/// <returns>
+	/// ダブルクリックした true / false
+	/// </returns>
+	bool DoubleClickCheck();
+
+
+	/// <summary>
+	/// プロパティを描画します
+	/// </summary>
+	void Property_draw();
 private:
 	bool mousegrid;			//マウスグリッドフラグ
+	bool doubleclick;		//ダブルクリックフラグ
+	bool propertyflag;		//プロパティ設定フラグ
+	int  mouseclickcount;	//マウスカウント		 
 };

@@ -42,7 +42,18 @@ bool FileImage::Init(const TASKNAME& taskname_)
 	this->position = { 0,0 };
 	this->scale = { 0,0 };
 	this->mousegrid = false;
+	this->mouseclickcount = 0;
+	this->doubleclick = false;
+	this->propertyflag = false;
 	this->draw = DrawInterFace::Addcomponent(RectF(this->position, this->scale), Rect{});
+
+
+	//プロパティ設定
+	{
+		GUIAsset::Register(L"リソースプロパティ", GUIStyle::Default);
+		GUIAsset(L"リソースプロパティ").setTitle(L"プロパティ");
+		GUIAsset(L"リソースプロパティ").add(L"テキスト", GUIToggleSwitch::Create(L"非表示", L"表示", false));
+	}
 	return true;
 }
 /*解放処理*/
@@ -66,6 +77,8 @@ void FileImage::Update()
 	{
 		this->MovebyMouse();
 	}
+
+	this->doubleclick = this->DoubleClickCheck();
 }
 /*描画処理*/
 void FileImage::Render()
@@ -83,6 +96,7 @@ void FileImage::Render()
 	{
 		this->draw->TextureDraw(this->draw->getDrawBace(), this->draw->getSrcBace());
 	}
+	this->Property_draw();
 }
 /*画像を読み込みます*/
 Texture FileImage::Load()
@@ -111,11 +125,58 @@ void FileImage::MovebyMouse()
 {
 	if (this->draw->getDrawBace().leftClicked)
 	{
-		this->mousegrid = !this->mousegrid;
+		this->mousegrid = true;
+	}
+	else if (!this->draw->getDrawBace().mouseOver && Input::MouseL.pressed)
+	{
+		this->mousegrid = false;
 	}
 	else if (this->mousegrid && Input::MouseL.pressed)
 	{
 		this->position = this->position.moveBy(Mouse::DeltaF());
 	}
 }
-
+/*ダブルクリックがされてるかを判定します*/
+bool FileImage::DoubleClickCheck()
+{
+	if (this->mousegrid)
+	{
+		if (this->draw->getDrawBace().leftClicked)
+		{
+			this->mouseclickcount++;
+		}
+		else if(!this->draw->getDrawBace().mouseOver && Input::MouseL.clicked)
+		{
+			this->mouseclickcount = 0;
+		}
+		//ダブルクリック判定
+		if (this->mouseclickcount >= DOUBLECLICK)
+		{
+			this->mouseclickcount = 0;
+			Println(L"成功");
+			return true;
+		}
+	}
+	return false;
+}
+/*プロパティ設定を描画します*/
+void FileImage::Property_draw()
+{
+	if (this->doubleclick)
+	{
+		this->propertyflag = true;
+	}
+	if (this->propertyflag)
+	{
+		GUIAsset(L"リソースプロパティ").show();
+		//右クリックで解除
+		if (!GUIAsset(L"リソースプロパティ").getRect().mouseOver && Input::MouseR.clicked)
+		{
+			this->propertyflag = false;
+		}
+	}
+	else
+	{
+		GUIAsset(L"リソースプロパティ").hide();
+	}
+}
