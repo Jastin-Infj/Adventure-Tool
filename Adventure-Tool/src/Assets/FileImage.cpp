@@ -41,6 +41,7 @@ bool FileImage::Init(const TASKNAME& taskname_)
 
 	this->position = { 0,0 };
 	this->scale = { 0,0 };
+	this->angle = 0.0f;
 	this->mousegrid = false;
 	this->mouseclickcount = 0;
 	this->doubleclick = false;
@@ -52,7 +53,14 @@ bool FileImage::Init(const TASKNAME& taskname_)
 	{
 		GUIAsset::Register(L"リソースプロパティ", GUIStyle::Default);
 		GUIAsset(L"リソースプロパティ").setTitle(L"プロパティ");
-		GUIAsset(L"リソースプロパティ").add(L"テキスト", GUIToggleSwitch::Create(L"非表示", L"表示", false));
+		GUIAsset(L"リソースプロパティ").add(GUIText::Create(L"座標値X"));
+		GUIAsset(L"リソースプロパティ").add(L"座標値X", GUITextField::Create(4));
+		GUIAsset(L"リソースプロパティ").add(GUIText::Create(L"座標値Y"));
+		GUIAsset(L"リソースプロパティ").addln(L"座標値Y", GUITextField::Create(4));
+		GUIAsset(L"リソースプロパティ").add(GUIText::Create(L"角度"));
+		GUIAsset(L"リソースプロパティ").add(L"角度", GUITextField::Create(3));
+		GUIAsset(L"リソースプロパティ").add(GUIText::Create(L"拡大率"));
+		GUIAsset(L"リソースプロパティ").addln(L"拡大率", GUITextField::Create(3));
 	}
 	return true;
 }
@@ -60,6 +68,11 @@ bool FileImage::Init(const TASKNAME& taskname_)
 bool FileImage::Finalize()
 {
 	return true;
+}
+/*角度を設定・変更します*/
+void FileImage::setAngle(const float& angle_)
+{
+	this->angle = angle_;
 }
 /*更新処理*/
 void FileImage::Update()
@@ -79,6 +92,17 @@ void FileImage::Update()
 	}
 
 	this->doubleclick = this->DoubleClickCheck();
+	if (!this->doubleclick)
+	{
+		{
+			const String str = Format(L"", this->position.x);
+			GUIAsset(L"リソースプロパティ").textField(L"座標値X").setText(str);
+		}
+		{
+			const String str = Format(L"", this->position.y);
+			GUIAsset(L"リソースプロパティ").textField(L"座標値Y").setText(str);
+		}
+	}
 }
 /*描画処理*/
 void FileImage::Render()

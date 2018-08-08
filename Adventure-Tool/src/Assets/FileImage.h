@@ -96,7 +96,17 @@ public:
 	/// プロパティを描画します
 	/// </summary>
 	void Property_draw();
+
+
+	/// <summary>
+	/// 角度を設定・変更します
+	/// </summary>
+	/// <param name="angle_">
+	/// 角度(弧度)
+	/// </param>
+	void setAngle(const float& angle_);
 private:
+	float angle;			//角度
 	bool mousegrid;			//マウスグリッドフラグ
 	bool doubleclick;		//ダブルクリックフラグ
 	bool propertyflag;		//プロパティ設定フラグ
