@@ -30,7 +30,7 @@ bool Tool::Init(const TASKNAME& taskname_)
 		auto file = FileImage::Create(TASKNAME("UI", "パス"));
 	}
 	{
-		auto filebutton = RibbonMenu::Create(TASKNAME("リボンメニュー", "ファイルボタン"),String(L"ファイル"),Vec2(0,0),Point(96,24),0.0f);
+		auto filebutton = RibbonMenu::Create(TASKNAME("リボンメニュー", "ファイルボタン"),RibbonMenu::Menutype::FILE,Vec2(0,0),Point(96,24),0.0f);
 	}
 	return true;
 }

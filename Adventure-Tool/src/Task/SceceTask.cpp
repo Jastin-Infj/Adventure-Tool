@@ -12,5 +12,5 @@ void TaskStartCreate()
 }
 void Init()
 {
-	
+	Window::Resize(Size(960, 540));
 }

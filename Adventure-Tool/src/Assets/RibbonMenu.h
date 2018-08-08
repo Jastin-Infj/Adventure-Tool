@@ -15,6 +15,15 @@ public:
 
 
 	/// <summary>
+	/// メニュータイプ
+	/// </summary>
+	enum class Menutype
+	{
+		FILE  = 0,		//ファイル
+	};
+
+
+	/// <summary>
 	/// コンストラクタ
 	/// </summary>
 	RibbonMenu();
@@ -49,7 +58,7 @@ public:
 	/// </returns>
 	bool Init(
 		const TASKNAME& taskname_, 
-		const String& buttonname_,
+		const Menutype& buttonname_,
 		const Vec2& position_, 
 		const Point& scale_ ,
 		const float& order_
@@ -62,8 +71,8 @@ public:
 	/// <param name="taskname_">
 	/// オブジェクト名(グループ名・タスク名)
 	/// </param>
-	/// <param name="buttonname_">
-	/// ボタン名
+	/// <param name="buttontype_">
+	/// メニュータイプ
 	/// </param>
 	/// <param name="position_">
 	/// 初期座標(X座標 , Y座標)
@@ -82,14 +91,14 @@ public:
 	/// </returns>
 	static TaskObject::SP Create(
 		const TASKNAME& taskname_, 
-		const String& buttonname_,
+		const Menutype& buttontype_,
 		const Vec2& position_, 
 		const Point& scale_,
 		const float& order_ = 1.0f , 
 		bool flag = true
 		);
 
-
+private:
 	/// <summary>
 	/// 更新処理
 	/// </summary>
@@ -110,6 +119,22 @@ public:
 	/// </returns>
 	bool Finalize()override;
 
+
+	/// <summary>
+	/// ファイルボタンのプルダウン生成
+	/// </summary>
+	void File_pulldownCreate();
+
+	
+	/// <summary>
+	/// ファイルボタンの更新処理
+	/// </summary>
+	void File_Update();
+
 private:
-	String buttonname;		//ボタンの名前
+	String		buttonname;		//ボタンの名前
+	bool		mouseclick;		//マウスclick
+	Menutype	menutype;		//メニュータイプ
+	std::vector<String>         pulldownmenuname;	//プルダウンメニュー名
+	std::vector<DrawInterFace*> pulldownmenu;		//プルダウンメニュー
 };
