@@ -16,6 +16,11 @@ GameObject::~GameObject()
 		delete this->draw;
 		this->draw = nullptr;
 	}
+	if (this->font)
+	{
+		delete this->font;
+		this->font = nullptr;
+	}
 	if (this->collider)
 	{
 		delete this->collider;

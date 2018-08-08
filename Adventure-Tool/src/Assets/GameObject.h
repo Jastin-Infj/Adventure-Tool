@@ -68,6 +68,7 @@ protected:
 	Point scale;					//オブジェクトの大きさ
 	float          order;			//描画優先順位
 	Collider*      collider;		//当たり判定
+	Font*          font;			//フォント機能
 	DrawInterFace* draw;			//描画機能
 	MoveInterFace* move;			//移動機能
 };

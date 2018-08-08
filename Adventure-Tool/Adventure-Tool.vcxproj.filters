@@ -426,6 +426,9 @@
     <ClCompile Include="src\Assets\FileImage.cpp">
       <Filter>ソース ファイル\Assets</Filter>
     </ClCompile>
+    <ClCompile Include="src\Assets\RibbonMenu.cpp">
+      <Filter>ソース ファイル\Assets</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\TaskSystem\TaskObject.h">
@@ -459,6 +462,9 @@
       <Filter>ソース ファイル\Assets</Filter>
     </ClInclude>
     <ClInclude Include="src\Assets\FileImage.h">
+      <Filter>ソース ファイル\Assets</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Assets\RibbonMenu.h">
       <Filter>ソース ファイル\Assets</Filter>
     </ClInclude>
   </ItemGroup>

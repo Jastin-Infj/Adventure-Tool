@@ -1,5 +1,9 @@
 #pragma once
 #include <Siv3D.hpp>
+
+#define DRAW_SIZE 5
+
+
 ///<summary>
 ///描画機能を追加するクラス
 ///</summary>
@@ -30,6 +34,12 @@ public:
 
 
 	/// <summary>
+	/// デストラクタ
+	/// </summary>
+	~DrawInterFace(){}
+
+
+	/// <summary>
 	/// 描画機能を追加します(Srcなし)
 	/// </summary>
 	/// <param name="draw">
@@ -55,6 +65,39 @@ public:
 	static DrawInterFace* Addcomponent(const s3d::RectF& draw, const s3d::Rect& src)
 	{
 		return new DrawInterFace(draw, src);
+	}
+
+
+	/// <summary>
+	/// フォントを生成します
+	/// </summary>
+	/// <param name="fontsize">
+	/// フォントサイズ
+	/// </param>
+	/// <returns>
+	/// 生成したフォントのポインタ
+	/// </returns>
+	static Font* Addcomponent(const int& fontsize)
+	{
+		return new Font(fontsize);
+	}
+
+
+	/// <summary>
+	/// フォントを用いて文字を描画します
+	/// </summary>
+	/// <param name="name">
+	/// 文字列
+	/// </param>
+	/// <param name="position">
+	/// 座標位置
+	/// </param>
+	/// <param name="color">
+	/// 描画色
+	/// </param>
+	void FontDraw(const Font& font,const String& name, const Vec2& position,const Color& color)
+	{
+		font(name).draw(position,color);
 	}
 
 	/// <summary>
@@ -344,10 +387,10 @@ public:
 		Rect rect;
 		rect = { (int)drawbace.x - 1, (int)drawbace.y - 1, (int)drawbace.w + 2,(int)drawbace.h + 2};
 		Circle circle[4];
-		circle[0] = { drawbace.x , drawbace.y , 5 };
-		circle[1] = { drawbace.x + drawbace.w , drawbace.y, 5 };
-		circle[2] = { drawbace.x , drawbace.y + drawbace.h , 5 };
-		circle[3] = { drawbace.x + drawbace.w , drawbace.y + drawbace.h, 5 };
+		circle[0] = { drawbace.x , drawbace.y , DRAW_SIZE };
+		circle[1] = { drawbace.x + drawbace.w , drawbace.y, DRAW_SIZE };
+		circle[2] = { drawbace.x , drawbace.y + drawbace.h , DRAW_SIZE };
+		circle[3] = { drawbace.x + drawbace.w , drawbace.y + drawbace.h, DRAW_SIZE };
 
 		rect.draw();
 		for (int i = 0; i < 4; ++i)
